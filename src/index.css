@@ -11,6 +11,8 @@ body {
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: all;
+  transition-duration:300ms;
 }
 
 code {
