@@ -1,4 +1,5 @@
 import { Component } from "solid-js"
+import DetailTab from "../components/detail-tab"
 
 
 
@@ -25,21 +26,7 @@ const data = {
   }
   
   
-  
-
-interface DetailTabProps {
-    name: string;
-    data: string
-  }
-  const DetailTab: Component<DetailTabProps> = ({ name, data }) => {
-    return <div>
-      <div class='flex justify-between items-center py-2' >
-        <span class='' >{name}</span>
-        <span class='text-gray-500' >{data}</span>
-      </div>
-      <hr />
-    </div>
-  }
+ 
 
 
   type Plan = "SPL_50Mb_30D_UL"

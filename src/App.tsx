@@ -4,6 +4,7 @@ import { TbHome, TbCashBanknote, TbHelp, TbUser, TbMenu, TbX } from 'solid-icons
 import logo from "./logo.svg"
 import Home from './home';
 import Recharge from './recharge';
+import Profile from './profile';
 
 const App: Component = () => {
   const [isMenuOpen, setMenuOpen] = createSignal(false)
@@ -11,7 +12,7 @@ const App: Component = () => {
     { name: "Home", icon: <TbHome size={30} class='inline' />, path: "/" },
     { name: "Recharge", icon: <TbCashBanknote size={30} class='inline' />, path: "/recharge" },
     { name: "Support", icon: <TbHelp size={30} class='inline' />, path: "/" },
-    { name: "Profile", icon: <TbUser size={30} class='inline' />, path: "/" },
+    { name: "Profile", icon: <TbUser size={30} class='inline' />, path: "/profile" },
   ]
   return (
     <div class='h-screen w-full md:flex md:flex-grow'>
@@ -47,6 +48,7 @@ const App: Component = () => {
         <Routes>
           <Route path="/" component={Home} />
           <Route path="/recharge" component={Recharge} />
+          <Route path="/profile" component={Profile} />
         </Routes>
       </div>
     </div>
