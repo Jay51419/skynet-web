@@ -1,5 +1,6 @@
 import { Component } from "solid-js";
 import DetailTab from "../components/detail-tab";
+import Layout from "../components/layout";
 
 const data = {
   creationDate: "07-Jul,21 21:48",
@@ -35,36 +36,38 @@ const Home: Component = () => {
   const plan = plans[data.planName as Plan];
 
   return (
-    <div class="px-8">
-      <div class="max-w-sm" >
-        <div class="px-1 py-4">
-          <span class="text-2xl">Hello</span>
-          <h3 class="font-bold text-3xl text-primary">
-            {data.name.split(" ")[0]},
-          </h3>
-        </div>
-        <div class="gap-6">
-          <div class="p-4 border border-gray-300">
-            <span>This month's total</span>
-            <div>
-              <span class="font-bold text-6xl">39.87</span>
-              <span>GB</span>
+    <Layout>
+      <div class="px-8">
+        <div class="max-w-sm">
+          <div class="px-1 py-4">
+            <span class="text-2xl">Hello</span>
+            <h3 class="font-bold text-3xl text-primary">
+              {data.name.split(" ")[0]},
+            </h3>
+          </div>
+          <div class="gap-6">
+            <div class="p-4 border border-gray-300">
+              <span>This month's total</span>
+              <div>
+                <span class="font-bold text-6xl">39.87</span>
+                <span>GB</span>
+              </div>
             </div>
-          </div>
 
-          <div class="p-4 border md:w-96  border-gray-300">
-            <span class="font-semibold">Plan details</span>
-            <DetailTab name="Speed" data={plan.speed} />
-            <DetailTab name="Data" data={plan.data} />
-            <DetailTab name="Validity" data={plan.validity} />
-          </div>
-          <div class="p-4 border md:w-96 flex justify-between  border-gray-300">
-            <span class="font-semibold">Next Recharge</span>
-            <span class="text-gray-500">{data.expiryDate.split(" ")[0]}</span>
+            <div class="p-4 border md:w-96  border-gray-300">
+              <span class="font-semibold">Plan details</span>
+              <DetailTab name="Speed" data={plan.speed} />
+              <DetailTab name="Data" data={plan.data} />
+              <DetailTab name="Validity" data={plan.validity} />
+            </div>
+            <div class="p-4 border md:w-96 flex justify-between  border-gray-300">
+              <span class="font-semibold">Next Recharge</span>
+              <span class="text-gray-500">{data.expiryDate.split(" ")[0]}</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

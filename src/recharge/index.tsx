@@ -3,6 +3,7 @@ import plan1800 from "../assets/qrcodes/1800.png";
 import plan2400 from "../assets/qrcodes/2400.png";
 import plan4000 from "../assets/qrcodes/4000.png";
 import plan7000 from "../assets/qrcodes/7000.png";
+import Layout from "../components/layout";
 const plans = [
   {
     rate: "1800",
@@ -52,42 +53,44 @@ const Recharge: Component = () => {
     setMobile(mobileAndTabletCheck());
   });
   return (
-    <div class="w-full">
-      <div class="flex flex-row justify-between gap-x-10 px-2">
-        <div
-          class={`hidden lg:flex flex-col pt-24  items-center w-full gap-y-4 ${
-            isMobile() && "hidden"
-          }`}
-        >
-          <div class="h-80 w-80">
-            <img src={plans[selected()].qrSrc} alt="Qr code" />
+    <Layout>
+      <div class="w-full">
+        <div class="flex flex-row justify-between gap-x-10 px-2">
+          <div
+            class={`hidden lg:flex flex-col pt-24  items-center w-full gap-y-4 ${
+              isMobile() && "hidden"
+            }`}
+          >
+            <div class="h-80 w-80">
+              <img src={plans[selected()].qrSrc} alt="Qr code" />
+            </div>
+            <span class="text-gray-500 font-semibold">Scan with UPI App</span>
           </div>
-          <span class="text-gray-500 font-semibold" >Scan with UPI App</span>
+          <div class="pb-16 flex flex-wrap">
+            {plans.map(({ rate, description }, index) => {
+              return (
+                <div
+                  class={`p-4 m-4 border md:w-96 border-gray-300 cursor-pointer ${
+                    selected() == index && "bg-blue-100"
+                  } `}
+                  onClick={() => setSelected(index)}
+                >
+                  <span class="font-semibold text-2xl">₹ {rate}</span>
+                  <span class="block text-gray-500">{description}</span>
+                </div>
+              );
+            })}
+          </div>
         </div>
-        <div class="pb-16 flex flex-wrap">
-          {plans.map(({ rate, description }, index) => {
-            return (
-              <div
-                class={`p-4 m-4 border md:w-96 border-gray-300 cursor-pointer ${
-                  selected() == index && "bg-blue-100"
-                } `}
-                onClick={() => setSelected(index)}
-              >
-                <span class="font-semibold text-2xl">₹ {rate}</span>
-                <span class="block text-gray-500">{description}</span>
-              </div>
-            );
-          })}
-        </div>
-      </div>
 
-      <a
-        href={link}
-        class="fixed lg:hidden bottom-0 w-full md:w-[calc(100%-15rem)] bg-primary py-4 text-center"
-      >
-        <span class="text-white text-xl">Pay with UPI</span>
-      </a>
-    </div>
+        <a
+          href={link}
+          class="fixed lg:hidden bottom-0 w-full md:w-[calc(100%-15rem)] bg-primary py-4 text-center"
+        >
+          <span class="text-white text-xl">Pay with UPI</span>
+        </a>
+      </div>
+    </Layout>
   );
 };
 
