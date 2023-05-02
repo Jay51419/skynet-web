@@ -7,6 +7,7 @@ import Profile from "./profile";
 import Support from "./support";
 import Header from "./components/header";
 import Login from "./login";
+import ChangePassword from "./change-password";
 const App: Component = () => {
   return (
     <Routes>
@@ -15,6 +16,7 @@ const App: Component = () => {
       <Route path="/recharge" component={Recharge} />
       <Route path="/profile" component={Profile} />
       <Route path="/support" component={Support} />
+      <Route path="/change-password" component={ChangePassword} />
     </Routes>
   );
 };
