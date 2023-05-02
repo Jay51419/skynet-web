@@ -19,7 +19,7 @@ const Login: Component = () => {
     }
   };
   return (
-    <div class="h-full w-full max-w-xs mx-auto ">
+    <div class="h-full w-full max-w-xs mx-auto mt-12">
       <div class="flex flex-col items-center gap-y-4">
         <img class="w-24 md:w-32" src={logo} alt="Skynet" />
         {!showVerificationCard() ? (
