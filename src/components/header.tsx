@@ -88,6 +88,17 @@ const Header: Component = () => {
                     Logout
                   </button>
                 </li>
+                <li class="mt-12 space-x-5">
+                 
+                     <A
+                      onClick={() => setMenuOpen(false)}
+                      href={"/verify"}
+                      class="font-semibold text-lg"
+                    >
+                      verify
+                    </A>
+                
+                </li>
               </ul>
             </nav>
           </div>
