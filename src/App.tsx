@@ -8,6 +8,7 @@ import Support from "./support";
 import Header from "./components/header";
 import Login from "./login";
 import ChangePassword from "./change-password";
+import VerifyEmail from "./components/verify-email";
 const App: Component = () => {
   return (
     <Routes>
@@ -17,6 +18,7 @@ const App: Component = () => {
       <Route path="/profile" component={Profile} />
       <Route path="/support" component={Support} />
       <Route path="/change-password" component={ChangePassword} />
+      <Route path="/verify" component={VerifyEmail} />
     </Routes>
   );
 };
