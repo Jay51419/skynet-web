@@ -8,7 +8,7 @@ const VerifyEmail = () => {
     const queryString = window.location.search;
     try {
       const res = await fetch(
-        "http://skynet-test.infinityfreeapp.com/wp-json/jwt-auth/v1/token?username=a&password=12345678",
+        "https://skynet-test.infinityfreeapp.com/wp-json/jwt-auth/v1/token?username=a&password=12345678",
         {
           method: "POST",
         }
