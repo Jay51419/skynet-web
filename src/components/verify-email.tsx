@@ -8,7 +8,7 @@ const VerifyEmail = () => {
     const queryString = window.location.search;
     try {
       const res = await fetch(
-        "https://skynet-test.infinityfreeapp.com/wp-json/wp/v2/users",
+        "http://skynet-test.byethost7.com/wp-json/wp/v2/users",
         {
           method: "POST",
         }
